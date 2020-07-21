@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Agregar Usuario</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="static/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/popper.min.js"></script>
+</head>
+
+<body>
+    {% extends "nav.html" %} {% block body %}
+
+    <br><br><br><br>
+    <h1>
+        <center>
+            Añadir Usuario
+        </center>
+    </h1>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mx-auto">
+            <form action="#" method="POST">
+                <div class="col-12 md-6">
+
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" class="form-control" id="cedula" name="txtCedula" maxlength="12" placeholder="Ingrese su cédula">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Ingrese su nombre">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="puesto">Puesto</label>
+                            <input type="text" class="form-control" id="puesto" name="txtPuesto" placeholder="Ingrese su puesto">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="txtTelefono" placeholder="Ingrese su número de teléfono">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="estado">Estado</label>
+                            <input type="text" class="form-control" id="estado" name="txtEstado" placeholder="Ingrese su estado (activo/inactivo)">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="contra1">Contraseña</label>
+                            <input type="password" class="form-control" id="contra1" name="txtContra1" placeholder="Ingrese una contraseña">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="contra2">Comprobar Contraseña</label>
+                            <input type="password" class="form-control" id="contra2" name="txtcontra2" placeholder="Ingrese su contraseña nuevamente">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <center>
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </center>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+{% endblock %}

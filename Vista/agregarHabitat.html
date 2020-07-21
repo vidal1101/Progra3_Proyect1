@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Agregar nueva hábitat</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="static/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/popper.min.js"></script>
+</head>
+
+<body>
+
+    {% extends "nav.html" %} {% block body %}
+
+    <br><br><br><br>
+    <h1>
+        <center>
+            Añadir Hábitat
+        </center>
+    </h1>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mx-auto">
+            <form action="/guardado" method="POST">
+                <div class="col-12 md-6">
+
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombreH">Nombre del hábitat</label>
+                            <input type="text" class="form-control" id="nombreH" name="txtnombreH" placeholder="Ingrese un nombre">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="clima">Clima del hábitat</label>
+                            <input type="text" class="form-control" id="clima" name="txtClima" placeholder="Ingrese un clima">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="vegetacion">Vegetación</label>
+                            <input type="text" class="form-control" id="vegetacion" name="txtVege" placeholder="Ingrese una vegetación">
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="estado">Estado</label>
+                            <select class="custom-select" name="txtEstado" value="" id="estado" required>
+                                <option selected disabled value="Sin estado">Seleccionar...</option>
+                                <!-- Dinamico -->
+                                <option>Activo</option>
+                                <option>Inactivo</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleccione un estado
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <center>
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </center>
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+{% endblock %}

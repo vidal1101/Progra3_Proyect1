@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Especies</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="static/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/popper.min.js"></script>
+</head>
+
+<body>
+    {% extends "nav.html" %} {% block body %}
+
+    <br><br><br><br>
+    <center>
+        <h1>Tipos de especies</h1>
+    </center>
+
+    <br><br><br><br>
+
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4 center">
+            <div class="card">
+                <img src="https://placehold.it/1200x400?text=Mamíferos" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mamíferos</h5>
+                    <p class="card-text">Los mamíferos son una clase de vertebrados amniotas homeotermos que poseen glándulas mamarias productoras de leche con las que alimentan a las crías.</p>
+                    <a href="#" class="btn btn-primary">Ir a la página</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://placehold.it/1200x400?text=Aves" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aves</h5>
+                    <p class="card-text">Las aves son animales vertebrados, de sangre caliente, que caminan, saltan o se mantienen solo sobre las extremidades posteriores.</p>
+                    <a href="#" class="btn btn-primary">Ir a la página</a>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://placehold.it/1200x400?text=Reptiles" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Reptiles</h5>
+                    <p class="card-text">Los reptiles son una clase de animales vertebrados amniotas provistos de escamas epidérmicas de queratina.</p>
+                    <a href="#" class="btn btn-primary">Ir a la página</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <img src="https://placehold.it/1200x400?text=Peces" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Peces</h5>
+                    <p class="card-text">Los peces son animales vertebrados primariamente acuáticos, generalmente ectotérmicos y con respiración por branquias.</p>
+                    <a href="#" class="btn btn-primary">Ir a la página</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+{% endblock %}

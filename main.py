@@ -1,21 +1,59 @@
 #importaciones basicas  
 from flask import Flask , request  , render_template, redirect
 from flask.helpers import url_for
+
 #objeto de la clase flask para las rutas 
-objflask = Flask(__name__,template_folder="vistas")
+objflask = Flask(__name__,template_folder="Vista")
 
 
-@objflask.route('/', methods=['GET', 'POST'])
+@objflask.route('/login', methods=['GET', 'POST'])
 def Login():
-    return 'hello'
+    return render_template('login.html')
+
+@objflask.route('/menu', methods=['GET', 'POST'])
+def menu():
+    return render_template('menu.html')
+
+@objflask.route('/habitat', methods=['GET', 'POST'])
+def habitat():
+    return render_template('habitat.html')
+
+@objflask.route('/especies', methods=['GET', 'POST'])
+def especies():
+    return render_template('/especies.html')
+
+@objflask.route('/itinerario', methods=['GET', 'POST'])
+def itinerario():
+    return render_template('/itinerario.html')
+
+@objflask.route('/historial', methods=['GET', 'POST'])
+def historial():
+    return render_template('/historial.html')
+
+@objflask.route('/usuarios', methods=['GET', 'POST'])
+def usuarios():
+    return render_template('/usuarios.html')
+
+@objflask.route('/agregarHabitat', methods=['GET', 'POST'])
+def agregarHabitat():
+    return render_template('/agregarHabitat.html')
 
 
+    
+@objflask.route('/guardado',methods=['POST'])
+def guardado():
+    #verifica que se esta obteniendo los datos del metodo post
+    if(request.method == 'POST'):
+        NomHabitat = request.form['txtnombreH']
+        Clima = request.form['txtClima']
+        Vegetacion = request.form['txtVege']
+        EstadoHabitat = request.form['txtEstado']
 
+        
 
+        myControlador.enviar(NomHabitat, Clima, Vegetacion, EstadoHabitat)
 
-
-
-
+    return redirect(url_for('habitat'))
 
 #-------------------- finalizo las rutas de mi osquetador  -----------------------------
 
