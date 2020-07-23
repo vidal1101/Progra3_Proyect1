@@ -44,9 +44,116 @@
                         <div class="col-md-8">
                             <div class="card-body">A</h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Acceder</a>
-                                <a href="#" class="btn btn-primary">Editar</a>
-                                <a href="#" class="btn btn-primary">Cambiar Estado</a>
+                                <div class="form-row">
+                                    <div class="col-sm-4 mb-1">
+                                        <a href="/especies" class="btn btn-primary">Acceder</a>
+                                    </div>
+                                    <div class="col-sm-4 mb-1">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itinerario">
+                                            Itinerario
+                                        </button>
+
+                                    </div>
+                                    <div class="col-sm-3 mb-2">
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                    </div>
+                                    <div class="col-sm-6 mb-1">
+                                        <a href="#" class="btn btn-primary">Cambiar Estado</a>
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="itinerario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">Itinerario</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <label for="habitat" class="col-sm-2 col-form-label">Hábitat:</label>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="habitat" name="txtHabitat">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="duracion" class="col-sm-2 col-form-label">Duración:</label>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="duracion" name="txtDuracion">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="longitud" class="col-sm-2 col-form-label">Longitud:</label>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="longitud" name="txtLongitud">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="maximo" class="col-sm-2 col-form-label">N° Máximo:</label>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="maximo" name="txtMaximo">
+                                                        </div>
+                                                    </div>
+
+                                                    <br>
+
+                                                    <!-- tabla -->
+                                                    <div class="row">
+                                                        <div class="col-12 mx-auto">
+                                                            <table class="table table-hover">
+                                                                <!-- cabezera de la tabla -->
+                                                                <thead class="table-light">
+                                                                    <tr>
+                                                                        <th scope="col">Horario</th>
+                                                                        <th scope="col">Actividad</th>
+
+
+                                                                    </tr>
+
+                                                                </thead>
+                                                                <!-- cuerpo de la tabla -->
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <th scope="row"></th>
+                                                                        <th></th>
+
+
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
                             </div>
                         </div>

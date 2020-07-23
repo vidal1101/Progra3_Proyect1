@@ -22,22 +22,29 @@ def habitat():
 def especies():
     return render_template('/especies.html')
 
-@objflask.route('/itinerario', methods=['GET', 'POST'])
-def itinerario():
-    return render_template('/itinerario.html')
-
 @objflask.route('/historial', methods=['GET', 'POST'])
 def historial():
     return render_template('/historial.html')
 
 @objflask.route('/usuarios', methods=['GET', 'POST'])
-def usuarios():
+def usuario():
     return render_template('/usuarios.html')
+
+@objflask.route('/agregarUsuario', methods=['GET', 'POST'])
+def agregarUsuario():
+    return render_template('/agregarUsuario.html')
 
 @objflask.route('/agregarHabitat', methods=['GET', 'POST'])
 def agregarHabitat():
     return render_template('/agregarHabitat.html')
 
+@objflask.route('/animales', methods=['GET', 'POST'])
+def animales():
+    return render_template('/animales.html')
+
+@objflask.route('/agregarAnimales', methods=['GET', 'POST'])
+def agregarAnimal():
+    return render_template('/agregarAnimales.html')
 
     
 @objflask.route('/guardado',methods=['POST'])

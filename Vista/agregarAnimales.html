@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Agregar Animales</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <script src="static/bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap-4.5.0-dist/js/popper.min.js"></script>
+</head>
+
+<body>
+    {% extends "nav.html" %} {% block body %}
+
+    <br><br><br><br>
+    <h1>
+        <center>
+            Añadir nuevo animal
+        </center>
+    </h1>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mx-auto">
+            <form action="#" method="POST">
+                <div class="col-12 md-6">
+
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="idEspe">ID Especie</label>
+                            <select class="custom-select" name="txtIdEspe" value="" id="idEspe" required>
+                                <option selected disabled value="Sin estado">Seleccionar</option>
+                                <!-- Dinamico -->
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleccione un Id
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nComun">Nombre Común</label>
+                            <input type="text" class="form-control" id="nComun" name="txtComun" placeholder="Ingrese un nombre común">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="nCienti">Nombre científico</label>
+                            <input type="text" class="form-control" id="nCienti" name="txtCienti" placeholder="Ingrese un nombre científico">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="selector">Seleccione una foto</label>
+                            <input type="file" class="form-control-file" id="selector">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="descripcion">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <center>
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </center>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+{% endblock %}

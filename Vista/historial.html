@@ -23,7 +23,42 @@
         <h1>Historial de visitas</h1>
     </center>
 
-    <br><br><br><br>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mx-auto">
+            <div class="col-12 md-6">
+                <div class="form-row">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+
+                    <div class="form-inline col-5">
+                        <label for="estado">N° Visita</label>
+                        <select class="custom-select" name="txtEstado" value="" id="estado" required>
+                            <option selected disabled value="Sin estado">Seleccionar</option>
+                            <!-- Dinamico -->
+                            <option></option>
+                            <option></option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Seleccione un estado
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <br><br>
+
     <!-- tabla -->
     <div class="row">
         <div class="col-12 mx-auto">
