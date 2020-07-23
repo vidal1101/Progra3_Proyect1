@@ -5,11 +5,14 @@ from flask.helpers import url_for
 #objeto de la clase flask para las rutas 
 objflask = Flask(__name__,template_folder="Vista")
 
-
+#iniccio del programa .. primer ruta
 @objflask.route('/login', methods=['GET', 'POST'])
 def Login():
     return render_template('login.html')
 
+
+
+# 
 @objflask.route('/menu', methods=['GET', 'POST'])
 def menu():
     return render_template('menu.html')
@@ -57,10 +60,15 @@ def guardado():
         EstadoHabitat = request.form['txtEstado']
 
         
+        
 
-        myControlador.enviar(NomHabitat, Clima, Vegetacion, EstadoHabitat)
+        # myControlador.enviar(NomHabitat, Clima, Vegetacion, EstadoHabitat)
 
     return redirect(url_for('habitat'))
+
+
+
+
 
 #-------------------- finalizo las rutas de mi osquetador  -----------------------------
 
