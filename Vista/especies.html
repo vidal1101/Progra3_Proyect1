@@ -19,46 +19,88 @@
 
     <br><br><br><br>
     <center>
-        <h1>Tipos de especies</h1>
+        <h1><strong>Tipos de especies</strong></h1>
     </center>
 
-    <br>
-    <div class="row">
-        <div class="col-12 col-md-4 mx-auto">
-            <div class="col-12 md-6">
-                <div class="form-row">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                    </form>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb col-6 col-md-4 mt-5 ml-2">
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="/habitat">Habitats</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Especies</li>
+        </ol>
+    </nav>
 
-                    <div class="form-inline col-5">
-                        <label for="num">N° Especie</label>
-                        <select class="custom-select" name="txtEstado" value="" id="num" required>
-                            <option selected disabled value="Sin estado">Seleccionar</option>
-                            <!-- Dinamico -->
-                            <option></option>
-                            <option></option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Seleccione un número de especie
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12 col-md-12 mx-auto">
+
+                <div class="form-row">
+
+                    <div class="col-12 col-md-4 mb-3">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#espe">
+                            Agregar Especie
+                        </button>
+                    </div>
+
+                    <div class=" col-12 col-md-4 mb-3">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <div class="form-inline col-5">
+                            <label for="num">Buscar N° Especie</label>
+                            <select class="custom-select" name="txtEstado" value="" id="num" required>
+                                <option selected disabled value="Sin estado">Seleccionar</option>
+                                <!-- Dinamico -->
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleccione un número de especie
+                            </div>
                         </div>
                     </div>
 
 
+
+                </div>
+
+            </div>
+
+            {% for indice in datos%}
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="https://placehold.it/1200x400?text=Mamíferos" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{indice.0}}</h5>
+                        <p class="card-text">{{indice.1}}</p>
+                        <p class="card-text">{{indice.2}}</p>
+                        <p class="card-text">{{indice.3}}</p>
+                        <a href="/animales" class="btn btn-primary">Acceder </a>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                    </div>
                 </div>
             </div>
+            {% endfor%}
+
+
         </div>
+
     </div>
-    <br>
 
-    <!-- boton de agregar -->
+
+
+
+
+
+
+
     <center>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#espe">
-            Agregar Especie
-        </button>
-
         <!-- Modal -->
         <div class="modal fade" id="espe" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
@@ -108,66 +150,7 @@
             </div>
         </div>
 
-
-
-
-
-
     </center>
-
-
-    <br>
-
-
-
-
-    <div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-4 center">
-            <div class="card">
-                <img src="https://placehold.it/1200x400?text=Mamíferos" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Mamíferos</h5>
-                    <p class="card-text">Los mamíferos son una clase de vertebrados amniotas homeotermos que poseen glándulas mamarias productoras de leche con las que alimentan a las crías.</p>
-                    <a href="/animales" class="btn btn-primary">Ir a la página</a>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-                <img src="https://placehold.it/1200x400?text=Aves" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Aves</h5>
-                    <p class="card-text">Las aves son animales vertebrados, de sangre caliente, que caminan, saltan o se mantienen solo sobre las extremidades posteriores.</p>
-                    <a href="#" class="btn btn-primary">Ir a la página</a>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-                <img src="https://placehold.it/1200x400?text=Reptiles" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Reptiles</h5>
-                    <p class="card-text">Los reptiles son una clase de animales vertebrados amniotas provistos de escamas epidérmicas de queratina.</p>
-                    <a href="#" class="btn btn-primary">Ir a la página</a>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mb-4">
-            <div class="card">
-                <img src="https://placehold.it/1200x400?text=Peces" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Peces</h5>
-                    <p class="card-text">Los peces son animales vertebrados primariamente acuáticos, generalmente ectotérmicos y con respiración por branquias.</p>
-                    <a href="#" class="btn btn-primary">Ir a la página</a>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

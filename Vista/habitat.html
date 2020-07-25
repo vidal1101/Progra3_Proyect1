@@ -25,28 +25,48 @@
 
     <br>
     <!-- boton de agregar habitat -->
-    <a href="/agregarHabitat" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Agregar nueva hábitat</a>
+
 
     <br><br><br>
 
     <div class="container-fluid">
 
         <div class="row mx-auto">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <a href="/agregarHabitat" class="btn btn-success btn-lg active" role="button" aria-pressed="true">
+                Agregar nueva hábitat
+                </a>
 
-            <div class="col-12 col-md-4 col-lg-4">
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-8 mb-3">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            </div>
+
+            {% for indice in datos%}
+            <div class="col-12 col-md-6 col-lg-4">
 
 
-                <div class="card mb-3" style="max-width: 540px;">
+                <div id="myDIV" class="card mb-3" style="max-width: 400px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <img src="https://placehold.it/1200x1300?text=xxx" class="card-img" alt="Image">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">A</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h5># {{indice.0}} , {{indice.1}}</h5>
+                                <p class="card-text">
+                                    <strong>Clima : </strong> {{indice.2}} </p>
+                                <p class="card-text">
+                                    <strong>Vegetacion :</strong> {{indice.3}}
+                                </p>
+                                <p class="card-text">
+                                    <strong>Estado :</strong> {{indice.4}}
+                                </p>
+
                                 <div class="form-row">
                                     <div class="col-sm-4 mb-1">
-                                        <a href="/especies" class="btn btn-primary">Acceder</a>
+                                        <a href="/especiesHabitas/{{indice.0}}" class="btn btn-primary">Acceder</a>
                                     </div>
                                     <div class="col-sm-4 mb-1">
                                         <!-- Button trigger modal -->
@@ -55,178 +75,125 @@
                                         </button>
 
                                     </div>
-                                    <div class="col-sm-3 mb-2">
-                                        <a href="#" class="btn btn-primary">Editar</a>
+                                    <div class="col-sm-4 mb-1">
+                                        <a href="/getHabitats?idhabi={{indice.0}}" class="btn btn-primary">Editar</a>
                                     </div>
-                                    <div class="col-sm-6 mb-1">
-                                        <a href="#" class="btn btn-primary">Cambiar Estado</a>
+                                    <div class="col-sm-12  mb-3">
+                                        <a href="/cambiarestadoHabitats/{{indice.0}}" class="btn btn-primary">Cambiar Estado</a>
                                     </div>
 
 
                                 </div>
 
-
-
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="itinerario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalCenterTitle">Itinerario</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                 </button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <form>
-                                                    <div class="form-group row">
-                                                        <label for="habitat" class="col-sm-2 col-form-label">Hábitat:</label>
-                                                        <div class="col-sm-3">
-                                                            <input type="text" class="form-control" id="habitat" name="txtHabitat">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="duracion" class="col-sm-2 col-form-label">Duración:</label>
-                                                        <div class="col-sm-3">
-                                                            <input type="text" class="form-control" id="duracion" name="txtDuracion">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group row">
-                                                        <label for="longitud" class="col-sm-2 col-form-label">Longitud:</label>
-                                                        <div class="col-sm-3">
-                                                            <input type="text" class="form-control" id="longitud" name="txtLongitud">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="maximo" class="col-sm-2 col-form-label">N° Máximo:</label>
-                                                        <div class="col-sm-3">
-                                                            <input type="text" class="form-control" id="maximo" name="txtMaximo">
-                                                        </div>
-                                                    </div>
-
-                                                    <br>
-
-                                                    <!-- tabla -->
-                                                    <div class="row">
-                                                        <div class="col-12 mx-auto">
-                                                            <table class="table table-hover">
-                                                                <!-- cabezera de la tabla -->
-                                                                <thead class="table-light">
-                                                                    <tr>
-                                                                        <th scope="col">Horario</th>
-                                                                        <th scope="col">Actividad</th>
-
-
-                                                                    </tr>
-
-                                                                </thead>
-                                                                <!-- cuerpo de la tabla -->
-                                                                <tbody>
-
-                                                                    <tr>
-                                                                        <th scope="row"></th>
-                                                                        <th></th>
-
-
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                <button type="button" class="btn btn-primary">Guardar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-
-            <div class="col-12 col-md-4 col-lg-4">
-
-
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://placehold.it/1200x1300?text=Mamíferos" class="card-img" alt="Image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">A</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Ir a la página</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-4">
-
-
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://placehold.it/1200x1300?text=Mamíferos" class="card-img" alt="Image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">A</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Ir a la página</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-            <div class="col-12 col-md-4 col-lg-4">
-
-
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://placehold.it/1200x1300?text=Mamíferos" class="card-img" alt="Image">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">A</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Ir a la página</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+            {% endfor%}
         </div>
     </div>
 
 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="itinerario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Itinerario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                 </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group row">
+                            <label for="habitat" class="col-sm-2 col-form-label">Hábitat:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="habitat" name="txtHabitat">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="duracion" class="col-sm-2 col-form-label">Duración:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="duracion" name="txtDuracion">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="longitud" class="col-sm-2 col-form-label">Longitud:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="longitud" name="txtLongitud">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="maximo" class="col-sm-2 col-form-label">N° Máximo:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="maximo" name="txtMaximo">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <!-- tabla -->
+                        <div class="row">
+                            <div class="col-12 mx-auto">
+                                <table class="table table-hover">
+                                    <!-- cabezera de la tabla -->
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col">Horario</th>
+                                            <th scope="col">Actividad</th>
+
+
+                                        </tr>
+
+                                    </thead>
+                                    <!-- cuerpo de la tabla -->
+                                    <tbody>
+
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <th></th>
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myDIV *").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
-{% endblock %}
+{% endblock %}oldivcolclass="col-12 col-md-6 col-lg-4" id="myDIV"id="myDIV"

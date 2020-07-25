@@ -44,7 +44,11 @@ BEGIN
             
             
        WHEN 'animales' THEN          
-            select * from animales;
+             SELECT a.idAnimales, h.NomHabitat , e.nomEspecie, a.NomComun, a.NomCientifico, a.Descripcion, a.Imagen
+             FROM  animales as a inner join especies as e on e.idEspecies = a.idEspecie 
+             inner join habitats as h on h.NumHabitat = e.NumHabitat
+             WHERE a.idEspecie = e.idEspecies and e.NumHabitat = h.NumHabitat
+             group by a.idAnimales;
 		
     END CASE;
 END$$
